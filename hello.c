@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <string.h>
 
 int main(void)
 {
@@ -10,6 +11,9 @@ int main(void)
 
     // Read the name
     fgets(name, sizeof(name), stdin);
+
+    // Remove the newline character if present
+    name[strcspn(name, "\n")] = '\0';
 
     // Display a greeting
     printf("Hello, %s!\n", name);
